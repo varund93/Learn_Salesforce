@@ -1,0 +1,23 @@
+.message{    
+    font-size: 0.4cm; 
+    color: black;    
+}
+
+.message-time{
+    font-size: 0.2cm; 
+    color: gray;
+}
+
+.sent{
+    background: #E2FFC7;
+}
+
+.received{
+    background:white;
+}
+
+.window{
+    /* background:#E5DDD5; */
+    background: #ECEBEA;
+    height: 10cm;
+}

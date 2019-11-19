@@ -1,0 +1,61 @@
+<template>
+    <lightning-card title="Whatsapp" icon-name="standard:messaging_user">
+        <lightning-layout slot="actions">
+            <lightning-layout-item class="slds-p-right_x-small">
+                <lightning-input variant="label-hidden" type="toggle" label="Availability" name="Availability"
+                    message-toggle-active="Online" message-toggle-inactive="Offline" onchange={handleAvailability}></lightning-input>
+            </lightning-layout-item>
+            <lightning-layout-item>
+                <lightning-button-icon icon-name="utility:refresh" onclick={handleLoad}></lightning-button-icon>
+            </lightning-layout-item>
+        </lightning-layout>
+        <div class="slds-m-around_small slds-scrollable_y slds-box window">
+            <lightning-layout multiple-rows>
+                <template if:true={messages}>
+                    <template for:each={messages} for:item="message">
+                        <lightning-layout-item class="slds-p-top_x-small" size="12" key={message.Id}>
+                            <template if:false={message.Sent__c}>
+                                <div class="slds-float_left slds-box slds-box_xx-small received">
+                                    <p class="message">{message.Message__c}</p>
+                                    <div class="slds-float_right">
+                                        <p class="message-time">
+                                            <lightning-formatted-date-time value={message.CreatedDate} year="numeric"
+                                                month="numeric" day="numeric" hour="2-digit" minute="2-digit"
+                                                time-zone={timeZone} time-zone-name="short" hour12="false">
+                                            </lightning-formatted-date-time>
+                                        </p>                                        
+                                    </div>
+                                </div>
+                            </template>
+                            <template if:true={message.Sent__c}>
+                                <div class="slds-float_right slds-box slds-box_xx-small sent">
+                                    <p class="message">{message.Message__c}</p>
+                                    <div class="slds-float_right">
+                                        <p class="message-time">
+                                            <lightning-formatted-date-time value={message.CreatedDate} year="numeric"
+                                                month="numeric" day="numeric" hour="2-digit" minute="2-digit"
+                                                time-zone={timeZone} time-zone-name="short" hour12="false">
+                                            </lightning-formatted-date-time>
+                                        </p>
+                                    </div>
+                                </div>
+                            </template>
+                        </lightning-layout-item>
+                    </template>
+                </template>
+            </lightning-layout>
+        </div>
+        <div class="slds-p-left_small slds-p-right_small">
+            <lightning-layout vertical-align="end">
+                <lightning-layout-item flexibility="grow">
+                    <lightning-textarea variant="label-hidden" label="Message" value={message} name="inputMessage"
+                        onchange={handleMessageChange}></lightning-textarea>
+                </lightning-layout-item>
+                <lightning-layout-item class="slds-p-left_xx-small slds-p-bottom_xx-small">
+                    <lightning-button-icon icon-name="utility:send" alternative-text="Settings" onclick={createMessage}>
+                    </lightning-button-icon>
+                </lightning-layout-item>
+            </lightning-layout>
+        </div>
+    </lightning-card>
+</template>
