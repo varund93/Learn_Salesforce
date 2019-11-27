@@ -1,0 +1,37 @@
+<template>
+    <lightning-card title="Conditional Rendering">
+        <lightning-layout multiple-rows>
+            <lightning-layout-item padding="around-small" size="12">
+                <lightning-input type="checkbox" label="Show" onchange={handlerShowDiv}></lightning-input>
+            </lightning-layout-item>
+
+            <template if:true={flag}>
+                <lightning-layout-item padding="around-small" size="12">
+                    <div>I'm here</div>
+                </lightning-layout-item>
+            </template>
+
+            <lightning-layout-item padding="around-small" size="12">
+                <template for:each={list_City} for:item="city">
+                    <div key={city}>
+                        {city}
+                    </div>
+                </template>
+            </lightning-layout-item>
+
+            <lightning-layout-item padding="around-small" size="12">
+                <template iterator:i={list_City}>
+                    <template if:true={i.first}>
+                        --Start--
+                    </template>
+                    <div key={i.value}>
+                        {i.value}
+                    </div>
+                    <template if:true={i.last}>
+                        --End--
+                    </template>
+                </template>
+            </lightning-layout-item>
+        </lightning-layout>
+    </lightning-card>
+</template>

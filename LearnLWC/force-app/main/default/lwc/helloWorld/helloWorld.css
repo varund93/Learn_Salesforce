@@ -1,0 +1,7 @@
+.greeting-class {
+    color:darkblue;
+}
+
+:host{
+    background-color: bisque;    
+}

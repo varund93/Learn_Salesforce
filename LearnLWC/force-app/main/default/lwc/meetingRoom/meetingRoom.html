@@ -1,0 +1,13 @@
+<template>
+    <div class="slds-p-around_medium lgc-bg">
+        <!-- <lightning-tile label={meetingRoomInfo.name} href="/path/to/somewhere">
+            <template if:true={showCapacity}>
+                <p class="slds-truncate" title={meetingRoomInfo.capacity}>Occupies {meetingRoomInfo.capacity} members
+                </p>
+            </template>
+        </lightning-tile> -->
+        <slot name="roomInfo">
+        </slot>
+        <slot></slot>
+    </div>
+</template>

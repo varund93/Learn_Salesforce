@@ -1,0 +1,34 @@
+<template>
+    <lightning-card title="Simple Calculator">
+        <lightning-layout multiple-rows>
+            <lightning-layout-item padding="horizontal-small" size="6">
+                <lightning-input type="number" label="N1" name="N1" onchange={handlerNumberChange}></lightning-input>
+            </lightning-layout-item>
+            <lightning-layout-item padding="horizontal-small" size="6">
+                <lightning-input type="number" label="N2" name="N2" onchange={handlerNumberChange}></lightning-input>
+            </lightning-layout-item>
+            <lightning-layout-item padding="around-small" size="6">
+                <lightning-button-group>
+                    <lightning-button name="Add" label="Add" onclick={handlerCalculate}></lightning-button>
+                    <lightning-button name="Subtract" label="Subtract" onclick={handlerCalculate}></lightning-button>
+                    <lightning-button name="Multiply" label="Multiply" onclick={handlerCalculate}></lightning-button>
+                    <lightning-button name="Divide" label="Divide" onclick={handlerCalculate}></lightning-button>
+                </lightning-button-group>
+            </lightning-layout-item>
+            <lightning-layout-item padding="around-small" size="6">
+                <lightning-formatted-text value={result}></lightning-formatted-text>
+            </lightning-layout-item>
+            <lightning-layout-item padding="around-small" size="12">
+                <lightning-input type="checkbox" label="History" onchange={handelerShowHistory}>
+                </lightning-input>
+                <template if:true={history}>
+                    <template for:each={results} for:item="r">
+                        <div key={r}>
+                            {r}
+                        </div>
+                    </template>
+                </template>
+            </lightning-layout-item>
+        </lightning-layout>
+    </lightning-card>
+</template>

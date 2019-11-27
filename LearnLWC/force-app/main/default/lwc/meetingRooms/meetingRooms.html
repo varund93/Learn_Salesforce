@@ -1,0 +1,18 @@
+<template>
+    <lightning-card title="Meeting Rooms">
+        <lightning-input type="toggle" label="Capacity" name="capacity" message-toggle-active="Show" message-toggle-inactive="Hide" slot="actions" onchange={toggleChangeHandler}></lightning-input>
+        <template for:each={meetingRooms} for:item="m">
+            <div key={m.name} style="padding: 5px;">
+                <c-meeting-room show-capacity={show}>
+                    <lightning-tile label={m.name} href="/path/to/somewhere" slot="roomInfo">
+                        <template if:true={show}>
+                            <p class="slds-truncate" title={m.capacity}>Occupies {m.capacity} members
+                            </p>
+                        </template>
+                    </lightning-tile>
+                    <p>* Conditions Apply</p>
+                </c-meeting-room>
+            </div>
+        </template>
+    </lightning-card>
+</template>

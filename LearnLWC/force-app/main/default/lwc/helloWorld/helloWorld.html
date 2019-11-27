@@ -1,0 +1,12 @@
+<template>
+    <lightning-card title="Hello World LWC">
+        <lightning-layout multiple-rows>
+            <lightning-layout-item padding="around-small" size="12">
+                <lightning-input label="Greeting" onchange={greetingChangeHandler}></lightning-input>
+            </lightning-layout-item>
+            <lightning-layout-item padding="around-small" size="12">
+                <div class="greeting-class">Hello {dynamicGreeting}</div>
+            </lightning-layout-item>
+        </lightning-layout>
+    </lightning-card>
+</template>
