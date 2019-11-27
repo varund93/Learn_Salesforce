@@ -1,0 +1,15 @@
+<template>
+    <lightning-card title="Public Method">
+        <lightning-layout multiple-rows>
+            <lightning-layout-item padding="around-small" size="6">
+                <lightning-input label="Value" value={value} onchange={onChangeHandler}></lightning-input>
+            </lightning-layout-item>
+            <lightning-layout-item padding="around-small" size="12">
+                <lightning-button label="Select" onclick={onSelectHandler}></lightning-button>
+            </lightning-layout-item>
+            <lightning-layout-item padding="around-small">
+                <c-public-method-child></c-public-method-child>
+            </lightning-layout-item>
+        </lightning-layout>
+    </lightning-card>
+</template>
