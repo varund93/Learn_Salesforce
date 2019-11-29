@@ -6,6 +6,12 @@
             "c/bmiCalculator": [
                 "bmiCalculator/bmiCalculator.js"
             ],
+            "c/componentLifecycleChild": [
+                "componentLifecycleChild/componentLifecycleChild.js"
+            ],
+            "c/componentLifecycleParent": [
+                "componentLifecycleParent/componentLifecycleParent.js"
+            ],
             "c/conditionalRendering": [
                 "conditionalRendering/conditionalRendering.js"
             ],
@@ -18,14 +24,14 @@
             "c/meetingRooms": [
                 "meetingRooms/meetingRooms.js"
             ],
-            "c/simpleCalculator": [
-                "simpleCalculator/simpleCalculator.js"
-            ],
             "c/publicMethodChild": [
                 "publicMethodChild/publicMethodChild.js"
             ],
             "c/publicMethodParent": [
                 "publicMethodParent/publicMethodParent.js"
+            ],
+            "c/simpleCalculator": [
+                "simpleCalculator/simpleCalculator.js"
             ]
         }
     },

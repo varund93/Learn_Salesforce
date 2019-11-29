@@ -17,4 +17,16 @@ export default class MeetingRooms extends LightningElement {
     toggleChangeHandler(e){
         this.show = e.target.checked;
     }
+
+    @track selectedRoom;
+    tileClickHandler(e)
+    {
+        this.selectedRoom = e.detail.name;
+    }
+
+    constructor()
+    {
+        super();
+        this.template.addEventListener('tileclick',this.tileClickHandler.bind(this));
+    }
 }
